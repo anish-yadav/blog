@@ -106,8 +106,9 @@ const Home: NextPage = () => {
       <div className="lg:px-48 px-4 py-20 bg-gray-50">
         <h4 className="text-3xl mb-6">Most Recent</h4>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-10 mb-8">
-          {blogs.map((blog) => (
+          {blogs.map((blog, index) => (
             <BlogCard
+              key={index}
               title={blog.title}
               author={blog.author}
               description={blog.description}
