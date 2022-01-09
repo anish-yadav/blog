@@ -68,7 +68,8 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="h-screen hero flex flex-col justify-end pb-2">
+      <div className="hero flex flex-col justify-end pb-2">
+        <div className="mt-24"></div>
         <div className="flex justify-start">
           <div className="lg:w-48 px-0"></div>
           <HeroCard
@@ -78,12 +79,14 @@ const Home: NextPage = () => {
             author="Amy Winehouse"
           />
         </div>
+        <div className="mt-24"></div>
         <div className="flex items-center justify-center">
           <div className="w-48 text-white text-center flex items-center justify-center">
             <ChevronLeft className="mr-2 cursor-pointer" /> 1 / 5
             <ChevronRight className="ml-2 cursor-pointer" />
           </div>
         </div>
+
       </div>
       <div className="mt-24"></div>
 

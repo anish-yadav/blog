@@ -1,0 +1,7 @@
+.root {
+  @apply bg-white text-black py-2 px-3 w-full appearance-none transition duration-150 ease-in-out border border-gray-500;
+}
+
+.root:focus {
+  @apply outline-none;
+}
