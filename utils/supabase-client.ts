@@ -14,3 +14,13 @@ export const updateUserName = async (user: User, name: string) => {
     })
     .eq("id", user.id);
 };
+
+
+export const createUser = async (user: User, name: string) => {
+  await supabase
+    .from<UserDetails>("users")
+    .insert({
+      full_name: name,
+      id: user.id
+    });
+}

@@ -59,7 +59,8 @@ export const UserContextProvider = (props: any) => {
     if (user) {
       Promise.allSettled([getUserDetails()]).then((results) => {
         const userDetailsPromise = results[0];
-
+        console.log('promise solved');
+        console.log(userDetailsPromise);
         if (userDetailsPromise.status == "fulfilled")
           setUserDetails(userDetailsPromise.value.data);
         setUserLoaded(true);
@@ -74,7 +75,7 @@ export const UserContextProvider = (props: any) => {
     userLoaded,
     signIn: (options: SignInOptions) => supabase.auth.signIn(options),
     signUp: (options: SignUpOptions) => supabase.auth.signUp(options),
-    singOut: () => {
+    signOut: () => {
       setUserDetails(null);
       return supabase.auth.signOut();
     },

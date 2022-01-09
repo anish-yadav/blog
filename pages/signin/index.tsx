@@ -22,12 +22,10 @@ const SignIn = () => {
 
   const handleSignIn = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
     setLoading(true);
     setMessage({});
 
     const { error } = await signIn({ email, password });
-
     if (error) {
       setMessage({ type: "error", content: error.message });
     }
@@ -52,7 +50,7 @@ const SignIn = () => {
 
   useEffect(() => {
     if (user) {
-      router.replace("/account");
+      router.replace("/");
     }
   }, [user]);
 
@@ -152,8 +150,8 @@ const SignIn = () => {
               </Link>
             </span>
           </div>
-
-          <div className="flex items-center my-6">
+          {/* TODO: add external providers */}
+          {/* <div className="flex items-center my-6">
             <div
               className="border-t border-gray-600 flex-grow mr-3"
               aria-hidden="true"
@@ -164,16 +162,17 @@ const SignIn = () => {
               aria-hidden="true"
             ></div>
           </div>
-
+          
           <Button
             variant="slim"
             type="submit"
             disabled={loading}
             onClick={() => handleOAuthSignIn("github")}
+            loading={loading}
           >
             <GitHub />
-            <span className="ml-2">Continue with GitHub</span>
-          </Button>
+            <p className="text-sm ml-2">Continue with GitHub</p>
+          </Button> */}
         </div>
       </div>
     );
